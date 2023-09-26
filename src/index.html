@@ -9,13 +9,19 @@
 <body>
 
 <div id="app">
-    <h1>Hello World</h1>
+    <h1>Hello {{ message }}</h1>
 </div>
 
 <script type="module">
     import * as Vue from 'vue/dist/vue.esm-bundler.js'
 
-    const app = Vue.createApp({})
+    const app = Vue.createApp({
+        data() {
+            return {
+                message: 'Vue 3!'
+            }
+        }
+    })
     app.mount('#app')
 </script>
 
