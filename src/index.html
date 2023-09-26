@@ -8,5 +8,16 @@
 </head>
 <body>
 
+<div id="app">
+    <h1>Hello World</h1>
+</div>
+
+<script type="module">
+    import * as Vue from 'vue/dist/vue.esm-bundler.js'
+
+    const app = Vue.createApp({})
+    app.mount('#app')
+</script>
+
 </body>
 </html>
