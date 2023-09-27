@@ -5,6 +5,7 @@ const app = Vue.createApp({
         <button v-on:click="increment">Increment</button>
         <p>{{ count }}</p>
         <div v-if="isEven(count)">Even</div>
+        <div v-else>Odd</div>
     `,
 
     data() {
