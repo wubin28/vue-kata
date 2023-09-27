@@ -6,11 +6,12 @@ const app = Vue.createApp({
         <p>{{ count }}</p>
         
         <div v-for="number in numbers">
-          <div> {{ number }} </div>
+          <div> 
+            {{ number }} 
+            <span v-if="isEven(number)">Even</span>
+            <span v-else>Odd</span>
+          </div>
         </div>
-        
-        <div v-if="isEven()">Even</div>
-        <div v-else>Odd</div>
     `,
 
     data() {
@@ -24,8 +25,8 @@ const app = Vue.createApp({
         increment() {
             this.count += 1
         },
-        isEven() {
-            return this.count % 2 === 0
+        isEven(number) {
+            return number % 2 === 0
         }
     }
 })
