@@ -4,7 +4,7 @@ const app = Vue.createApp({
     template: `
         <button v-on:click="increment">Increment</button>
         <p>{{ count }}</p>
-        <div v-if="isEven(count)">Even</div>
+        <div v-if="isEven()">Even</div>
         <div v-else>Odd</div>
     `,
 
@@ -18,8 +18,8 @@ const app = Vue.createApp({
         increment() {
             this.count += 1
         },
-        isEven(number) {
-            return number % 2 === 0
+        isEven() {
+            return this.count % 2 === 0
         }
     }
 })
