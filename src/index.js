@@ -2,7 +2,7 @@ import * as Vue from 'vue/dist/vue.esm-bundler.js'
 
 const app = Vue.createApp({
     template: `
-        <button v-on:click="increment()">Increment</button>
+        <button v-on:click="increment(5)">Increment</button>
         <p>{{ count }}</p>
     `,
 
@@ -13,8 +13,8 @@ const app = Vue.createApp({
     },
 
     methods: {
-        increment() {
-            this.count++
+        increment(initialValue = 1) {
+            this.count += initialValue
         }
     }
 })
