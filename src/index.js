@@ -6,8 +6,18 @@ const app = Vue.createApp({
       <p>{{ count }}</p>
 
       <input
+          type="radio"
           v-model="value"
+          value="a"
       />
+      <input
+          type="radio"
+          v-model="value"
+            value="b"
+      />
+      
+      {{ value }}
+
       <div class="red">{{ error }}</div>
 
       <div
@@ -23,7 +33,7 @@ const app = Vue.createApp({
     data() {
         return {
             count: 0,
-            value: 'user',
+            value: 'a',
             numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
         }
     },
