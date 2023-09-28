@@ -2,23 +2,23 @@ import * as Vue from 'vue/dist/vue.esm-bundler.js'
 
 const app = Vue.createApp({
     template: `
-        <button v-on:click="increment">Increment</button>
-        <p>{{ count }}</p>
+      <button v-on:click="increment">Increment</button>
+      <p>{{ count }}</p>
 
-        <input 
-            v-bind:value="value"
-            v-on:input="input"
-        />
-        <div class="red">{{ error }}</div>
+      <input
+          v-bind:value="value"
+          v-on:input="input"
+      />
+      <div class="red">{{ error }}</div>
 
-        <div 
-            v-for="number in numbers"
-            v-bind:class="getClass(number)"
-        >
-          <div> 
-            {{ number }} 
-          </div>
+      <div
+          v-for="number in numbers"
+          v-bind:class="getClass(number)"
+      >
+        <div>
+          {{ number }}
         </div>
+      </div>
     `,
 
     data() {
