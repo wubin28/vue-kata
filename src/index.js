@@ -37,7 +37,7 @@ const app = Vue.createApp({
 
     methods: {
         input($event) {
-            console.log($event.target.value)
+            this.value = $event.target.value
         },
         getClass(number) {
             return this.isEven(number) ? 'blue' : 'red'
