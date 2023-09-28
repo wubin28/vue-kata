@@ -16,7 +16,7 @@ const app = Vue.createApp({
       <button v-on:click="increment">Increment</button>
       <p>{{ count }}</p>
 
-      <hello greeting="Hello" />
+      <hello v-bind:greeting="'Hello'" />
 
       <input
           type="checkbox"
