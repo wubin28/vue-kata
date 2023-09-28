@@ -7,7 +7,7 @@ const app = Vue.createApp({
         
         <div 
             v-for="number in numbers"
-            v-bind:class="isEven(number) ? 'blue' : 'red'"
+            v-bind:class="getClass(number)"
         >
           <div> 
             {{ number }} 
@@ -29,6 +29,9 @@ const app = Vue.createApp({
     },
 
     methods: {
+        getClass(number) {
+            return this.isEven(number) ? 'blue' : 'red'
+        },
         increment() {
             this.count += 1
         },
