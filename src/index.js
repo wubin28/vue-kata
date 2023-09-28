@@ -6,8 +6,7 @@ const app = Vue.createApp({
       <p>{{ count }}</p>
 
       <input
-          v-bind:value="value"
-          v-on:input="input"
+          v-model="value"
       />
       <div class="red">{{ error }}</div>
 
@@ -39,9 +38,6 @@ const app = Vue.createApp({
     },
 
     methods: {
-        input($event) {
-            this.value = $event.target.value
-        },
         getClass(number) {
             return this.isEven(number) ? 'blue' : 'red'
         },
