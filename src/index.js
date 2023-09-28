@@ -3,8 +3,21 @@ import * as Vue from 'vue/dist/vue.esm-bundler.js'
 const Num = {
     props: ['number'],
     template: `
-      {{ number }}
-    `
+      <div
+          v-bind:class="getClass(number)"
+      >
+        {{ number }}
+      </div>
+    `,
+
+    methods: {
+        getClass(number) {
+            return this.isEven(number) ? 'blue' : 'red'
+        },
+        isEven(number) {
+            return number % 2 === 0
+        }
+    }
 }
 
 const app = Vue.createApp({
@@ -34,7 +47,6 @@ const app = Vue.createApp({
 
       <div
           v-for="number in numbers"
-          v-bind:class="getClass(number)"
       >
         <num v-bind:number="number" />
       </div>
@@ -58,15 +70,9 @@ const app = Vue.createApp({
     },
 
     methods: {
-        getClass(number) {
-            return this.isEven(number) ? 'blue' : 'red'
-        },
         increment() {
             this.count += 1
         },
-        isEven(number) {
-            return number % 2 === 0
-        }
     }
 })
 app.mount('#app')
