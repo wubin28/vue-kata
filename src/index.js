@@ -45,11 +45,10 @@ const app = Vue.createApp({
 
       <div class="red">{{ error }}</div>
 
-      <div
+      <num
           v-for="number in numbers"
-      >
-        <num v-bind:number="number" />
-      </div>
+          v-bind:number="number"
+      />
     `,
 
     data() {
