@@ -26,24 +26,21 @@ const app = Vue.createApp({
             count: 0,
             value: 'user',
             numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-            error: ''
         }
     },
 
     computed: {
         evenNumbers() {
             return this.numbers.filter(number => this.isEven(number))
+        },
+        error() {
+            return this.value.length < 5 ? 'Must be greater than 4 characters' : ''
         }
     },
 
     methods: {
         input($event) {
             this.value = $event.target.value
-            if (this.value.length < 5) {
-                this.error = 'Must be greater than 4 characters'
-            } else {
-                this.error = ''
-            }
         },
         getClass(number) {
             return this.isEven(number) ? 'blue' : 'red'
