@@ -5,7 +5,10 @@ const app = Vue.createApp({
         <button v-on:click="increment">Increment</button>
         <p>{{ count }}</p>
         
-        <div v-for="number in evenNumbers">
+        <div 
+            v-for="number in numbers"
+            v-bind:class="isEven(number) ? 'blue' : 'red'"
+        >
           <div> 
             {{ number }} 
           </div>
