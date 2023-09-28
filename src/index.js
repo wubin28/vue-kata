@@ -4,7 +4,13 @@ const app = Vue.createApp({
     template: `
         <button v-on:click="increment">Increment</button>
         <p>{{ count }}</p>
-        
+
+        <input 
+            v-bind:value="value"
+            v-on:input="input"
+        />
+        {{ value }}
+
         <div 
             v-for="number in numbers"
             v-bind:class="getClass(number)"
@@ -18,6 +24,7 @@ const app = Vue.createApp({
     data() {
         return {
             count: 0,
+            value: 'user',
             numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
         }
     },
@@ -29,6 +36,9 @@ const app = Vue.createApp({
     },
 
     methods: {
+        input($event) {
+            console.log($event.target.value)
+        },
         getClass(number) {
             return this.isEven(number) ? 'blue' : 'red'
         },
