@@ -1,23 +1,21 @@
 import * as Vue from 'vue/dist/vue.esm-bundler.js'
 
-const Hello = {
-    props: ['greeting'],
+const Num = {
+    props: ['number'],
     template: `
-    <p>{{ greeting }}!</p>
+      {{ number }}
     `
 }
 
 const app = Vue.createApp({
     components: {
-        Hello
+        Num
     },
 
     template: `
       <button v-on:click="increment">Increment</button>
       <p>{{ count }}</p>
 
-      <hello greeting="Hello" />
-      <hello greeting="Hi" />
 
       <input
           type="checkbox"
@@ -38,9 +36,7 @@ const app = Vue.createApp({
           v-for="number in numbers"
           v-bind:class="getClass(number)"
       >
-        <div>
-          {{ number }}
-        </div>
+        <num v-bind:number="number" />
       </div>
     `,
 
