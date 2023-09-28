@@ -6,12 +6,12 @@ const app = Vue.createApp({
       <p>{{ count }}</p>
 
       <input
-          type="radio"
+          type="checkbox"
           v-model="value"
           value="a"
       />
       <input
-          type="radio"
+          type="checkbox"
           v-model="value"
             value="b"
       />
@@ -33,7 +33,7 @@ const app = Vue.createApp({
     data() {
         return {
             count: 0,
-            value: 'a',
+            value: ['a'],
             numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
         }
     },
