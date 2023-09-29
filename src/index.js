@@ -26,25 +26,7 @@ const app = Vue.createApp({
     },
 
     template: `
-      <button v-on:click="increment">Increment</button>
-      <p>{{ count }}</p>
-
-
-      <input
-          type="checkbox"
-          v-model="value"
-          value="a"
-      />
-      <input
-          type="checkbox"
-          v-model="value"
-          value="b"
-      />
-
-      {{ value }}
-
-      <div class="red">{{ error }}</div>
-
+      
       <num
           v-for="number in numbers"
           v-bind:number="number"
@@ -53,8 +35,6 @@ const app = Vue.createApp({
 
     data() {
         return {
-            count: 0,
-            value: ['a'],
             numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
         }
     },
@@ -63,15 +43,9 @@ const app = Vue.createApp({
         evenNumbers() {
             return this.numbers.filter(number => this.isEven(number))
         },
-        error() {
-            return this.value.length < 5 ? 'Must be greater than 4 characters' : ''
-        }
     },
 
     methods: {
-        increment() {
-            this.count += 1
-        },
     }
 })
 app.mount('#app')
