@@ -5,12 +5,16 @@ const Num = {
     template: `
       <button
           v-bind:class="getClass(number)"
+          v-on:click="click(number)"
       >
         {{ number }}
       </button>
     `,
 
     methods: {
+        click(number) {
+            console.log(number)
+        },
         getClass(number) {
             return this.isEven(number) ? 'blue' : 'red'
         },
