@@ -13,7 +13,7 @@ const Num = {
 
     methods: {
         click() {
-            console.log(this.number)
+            this.$emit('chosen', this.number)
         },
         getClass(number) {
             return this.isEven(number) ? 'blue' : 'red'
@@ -30,10 +30,10 @@ const app = Vue.createApp({
     },
 
     template: `
-      
       <num
           v-for="number in numbers"
           v-bind:number="number"
+          v-on:chosen="addNumber"
       />
     `,
 
@@ -50,6 +50,9 @@ const app = Vue.createApp({
     },
 
     methods: {
+        addNumber(number) {
+            console.log('number', number)
+        }
     }
 })
 app.mount('#app')
